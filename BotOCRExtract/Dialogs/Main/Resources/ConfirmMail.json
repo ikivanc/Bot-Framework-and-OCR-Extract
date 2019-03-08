@@ -1,0 +1,86 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://image.flaticon.com/icons/svg/1332/1332617.svg",
+                                    "size": "Small"
+                                }
+                            ],
+                            "width": "auto"
+                        },
+                        {
+                            "type": "Column",
+                            "horizontalAlignment": "Left",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "horizontalAlignment": "Left",
+                                    "spacing": "None",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "text": "Form Extractor Confirmation",
+                                    "wrap": true
+                                }
+                            ],
+                            "width": "stretch"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+          "items": [
+            {
+              "type": "FactSet",
+              "facts": [
+                {
+                  "title": "From:",
+                  "value": "#From"
+                },
+                {
+                  "title": "To:",
+                  "value": "#To"
+                },
+                {
+                  "title": "Sent Date:",
+                  "value": "#Sent"
+                },
+                {
+                  "title": "Subject:",
+                  "value": "#Subject"
+                }
+              ]
+            }
+          ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Confirm",
+            "data": {
+                "adaptiveResponse": "confirm"
+            }
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Edit Info",
+            "data": {
+                "adaptiveResponse": "editInfo"
+            }
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0"
+}
