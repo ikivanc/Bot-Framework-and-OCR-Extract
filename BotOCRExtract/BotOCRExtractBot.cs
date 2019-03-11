@@ -54,11 +54,6 @@ namespace BotOCRExtract
                 throw new System.ArgumentNullException(nameof(loggerFactory));
             }
 
-            _accessors = new BotOCRExtractAccessors(conversationState)
-            {
-                CounterState = conversationState.CreateProperty<CounterState>(BotOCRExtractAccessors.CounterStateName),
-            };
-
             _logger = loggerFactory.CreateLogger<BotOCRExtractBot>();
             _logger.LogTrace("Turn start.");
         }
