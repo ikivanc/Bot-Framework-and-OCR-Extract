@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using BotOCRExtract.Helpers;
 using BotOCRExtract.Model;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Connector;
@@ -141,18 +142,13 @@ namespace BotOCRExtract
             await turnContext.SendActivityAsync(reply, cancellationToken);
         }
 
-
-        const int b_margin = 5;
-        const int a_margin = 5;
-        const int b_width = 300;
-        const int a_height = 25;
-
         private static List<string> ExtractKeyValuePairs(Line[] lines)
         {
             //Initialize settings
-            string searchKeys = "From,Sent,To,Subject";
+            List<TextExtract> searchKeyList = Helper.RetrieveAllSearchTextKeyFields();
             List<Word> textvalues = new List<Word>();
             List<string> result = new List<string>();
+            int b_margin, a_margin, b_width, a_height;
 
             // Extract regions of text words
             foreach (Line sline in lines)
@@ -165,15 +161,20 @@ namespace BotOCRExtract
             }
 
             // Search Key-Value Pairs inside the documents
-            if (!string.IsNullOrEmpty(searchKeys))
+            if (searchKeyList.Count > 0)
             {
-                var ocrsearchkeys = searchKeys.Split(',');
-                foreach (string key in ocrsearchkeys)
+                foreach (TextExtract key in searchKeyList)
                 {
-                    var resultkeys = textvalues.Where(a => a.Text.Contains(key));
-
+                    var resultkeys = textvalues.Where(a => a.Text.Contains(key.Text));
                     foreach (var tv in resultkeys)
                     {
+                        // Assign all fields values per text
+                        b_margin = key.MarginX;
+                        a_margin = key.MarginY;
+                        b_width = key.Width;
+                        a_height = key.Height;
+
+
                         // For height It's looking for 10px above
                         string txtreply = string.Join(" ",
                                                     from a in textvalues
