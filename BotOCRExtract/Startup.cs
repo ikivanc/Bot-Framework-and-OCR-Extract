@@ -2,8 +2,10 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using BotOCRExtract.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Bot.Builder;
@@ -91,6 +93,25 @@ namespace BotOCRExtract
             {
                 throw new InvalidOperationException($"The .bot file does not contain an endpoint with name '{environment}'.");
             }
+
+            // OCR Subscription key and Endpoint from appsettings
+            var subscriptionKey = Configuration.GetValue<string>("subscriptionKey");
+
+            if (string.IsNullOrEmpty(subscriptionKey))
+            {
+                throw new InvalidOperationException("Microsoft Cognitive Services OCR key is missing. Please add your OCR key to the 'subscriptionKey' appsetting.");
+            }
+
+            var uriEndPoint = Configuration.GetValue<string>("uriEndPoint");
+
+            if (string.IsNullOrEmpty(uriEndPoint))
+            {
+                throw new InvalidOperationException("Microsoft Cognitive Services OCR endpoint is missing. Please add your OCR Uri endpoint to the 'uriEndPoint' appsetting.");
+            }
+            Dictionary<string, string> OcrCridentials = new Dictionary<string, string>();
+            OcrCridentials.Add(subscriptionKey, uriEndPoint);
+            services.AddSingleton(OcrCridentials);
+
 
             // Memory Storage is for local bot debugging only. When the bot
             // is restarted, everything stored in memory will be gone.
