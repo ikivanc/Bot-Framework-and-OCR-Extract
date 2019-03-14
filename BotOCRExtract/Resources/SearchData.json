@@ -4,7 +4,7 @@
       "text": "From",
       "marginX": 5,
       "marginY": 5,
-      "width": 300,
+      "width": 800,
       "height": 25
     },
     {
@@ -12,7 +12,7 @@
       "text": "Sent",
       "marginX": 5,
       "marginY": 5,
-      "width": 300,
+      "width": 400,
       "height": 25
     },
     {
@@ -28,7 +28,7 @@
       "text": "Subject",
       "marginX": 5,
       "marginY": 5,
-      "width": 300,
+      "width": 900,
       "height": 25
     }
 ]
