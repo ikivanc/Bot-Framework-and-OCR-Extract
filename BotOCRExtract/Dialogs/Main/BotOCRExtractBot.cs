@@ -4,20 +4,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using System.Threading;
 using System.Threading.Tasks;
-
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Connector;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
-
 using BotOCRExtract.Services;
 
 
 
-namespace BotOCRExtract
+namespace BotOCRExtract.Dialogs.Main
 {
     /// <summary>
     /// Represents a bot that processes incoming activities.
@@ -32,9 +29,7 @@ namespace BotOCRExtract
     /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1"/>
     public class BotOCRExtractBot : IBot
     {
-        private readonly BotOCRExtractAccessors _accessors;
         private readonly ILogger _logger;
-
         private readonly string _subscriptionKey;
         private readonly string _uriEndPoint;
 
@@ -44,7 +39,7 @@ namespace BotOCRExtract
         /// <param name="conversationState">The managed conversation state.</param>
         /// <param name="loggerFactory">A <see cref="ILoggerFactory"/> that is hooked to the Azure App Service provider.</param>
         /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#windows-eventlog-provider"/>
-        public BotOCRExtractBot(ConversationState conversationState, ILoggerFactory loggerFactory, Dictionary<string, string> OcrValue)
+        public BotOCRExtractBot(ConversationState conversationState, ILoggerFactory loggerFactory, Dictionary<string, string> ocrCridentials)
         {
             if (conversationState == null)
             {
@@ -56,11 +51,11 @@ namespace BotOCRExtract
                 throw new System.ArgumentNullException(nameof(loggerFactory));
             }
 
-            if (OcrValue != null)
+            if (ocrCridentials != null)
             {
-                foreach (var key in OcrValue.Keys)
+                foreach (var key in ocrCridentials.Keys)
                 {
-                    string uri = OcrValue[key];
+                    string uri = ocrCridentials[key];
                     _subscriptionKey = key ?? throw new ArgumentNullException(nameof(key));
                     _uriEndPoint = uri ?? throw new ArgumentNullException(nameof(uri));
                 }

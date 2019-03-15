@@ -4,7 +4,7 @@
 using System;
 using Microsoft.Bot.Builder;
 
-namespace BotOCRExtract
+namespace BotOCRExtract.Dialogs.Main
 {
     /// <summary>
     /// This class is created as a Singleton and passed into the IBot-derived constructor.

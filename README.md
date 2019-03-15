@@ -1,4 +1,4 @@
-# Extract Key/Value pairs from OCR output in Bot
+# Extract Key-Value pairs from OCR output in Bot
 
 This bot is a sample bot that accepts Form Image inputs from the user and extract needed information into a card and reply user back. You can use structured and semi-structured Forms to Extract details.
 
@@ -18,6 +18,11 @@ Search data notation is like below format:
   "height": 25      // Height of your text area
 }
 ```
+
+The output for above details will be like below
+
+![](Images/key_value.png)
+
 
 ## Extract Key-Values from Semi-Structured Content
 
