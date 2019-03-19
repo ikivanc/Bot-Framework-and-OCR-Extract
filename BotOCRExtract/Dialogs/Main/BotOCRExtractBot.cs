@@ -77,6 +77,9 @@ namespace BotOCRExtract.Dialogs.Main
                 var imageAttachment = turnContext.Activity.Attachments?.FirstOrDefault(a => a.ContentType.Contains("image"));
                 if (imageAttachment != null)
                 {
+                    //Show typing activity to User
+                    await UIHelper.SendTypingMessage(turnContext);
+
                     Task.Run(async () =>
                     {
                         var ocrresult = await OCRHelper.GetCaptionAsync(turnContext.Activity, connector, _subscriptionKey, _uriEndPoint);
@@ -86,7 +89,7 @@ namespace BotOCRExtract.Dialogs.Main
                         {
                             // Create Adaptive Card for confirmation view
                             string jsonCardPath = @"Dialogs\Main\Resources\ConfirmMail.json";
-                            var cardAttachment = await UIHelper.CreateAdaptiveCardUserInfo(jsonCardPath,turnContext, ocrresult);
+                            var cardAttachment = await UIHelper.CreateAdaptiveCardUserInfo(jsonCardPath, turnContext, ocrresult);
                             reply = turnContext.Activity.CreateReply();
                             reply.Attachments = new List<Attachment>() { cardAttachment };
                             await turnContext.SendActivityAsync(reply, cancellationToken).ConfigureAwait(false); ;
@@ -125,5 +128,6 @@ namespace BotOCRExtract.Dialogs.Main
             }
         }
 
+      
     }
 }

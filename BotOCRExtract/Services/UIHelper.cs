@@ -46,5 +46,12 @@ namespace BotOCRExtract.Services
             };
             await turnContext.SendActivityAsync(reply, cancellationToken);
         }
+
+        public static async Task SendTypingMessage(ITurnContext turnContext)
+        {
+            var typing = turnContext.Activity.CreateReply();
+            typing.Type = ActivityTypes.Typing;
+            await turnContext.SendActivityAsync(typing);
+        }
     }
 }
