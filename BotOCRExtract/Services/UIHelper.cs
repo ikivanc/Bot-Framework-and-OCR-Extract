@@ -13,22 +13,43 @@ namespace BotOCRExtract.Services
         // Generate adaptive card for UserInfo
         public static async Task<Attachment> CreateAdaptiveCardUserInfo(string filePath, ITurnContext turnContext, List<string> keyValuePairs)
         {
-            var adaptiveCardJson = File.ReadAllText(filePath);
-
-            foreach (var str in keyValuePairs)
+            try
             {
-                string strKey = "#" + str.Split(" - ")[0].Replace(",", "").Replace(":", "");  //Key Values should be cleaned
-                string strValue = str.Split(" - ")[1];
+                var adaptiveCardJson = File.ReadAllText(filePath);
+
+                // this code snippet generates items for JSON placeholder in adaptive card
+                string strKey = "#GENERATEITEMS";
+                List<string> strValueList = new List<string>();
+
+                foreach (var str in keyValuePairs)
+                {
+                    strValueList.Add("{ \"title\": \"" + str.Split(" - ")[0] + ":\", \"value\": \"" + str.Split(" - ")[1] + "\" }");
+                }
+
+                string strValue = string.Join(",", strValueList);
                 adaptiveCardJson = adaptiveCardJson.ToString().Replace(strKey, strValue);
+
+
+                //This is for predefined keys & Values
+                //foreach (var str in keyValuePairs)
+                //{
+                //    string strKey = "#" + str.Split(" - ")[0].Replace(",", "").Replace(":", "");  //Key Values should be cleaned
+                //    string strValue = str.Split(" - ")[1];
+                //    adaptiveCardJson = adaptiveCardJson.ToString().Replace(strKey, strValue);
+                //}
+
+                var adaptiveCardAttachment = new Attachment()
+                {
+                    ContentType = "application/vnd.microsoft.card.adaptive",
+                    Content = JsonConvert.DeserializeObject(adaptiveCardJson),
+                };
+
+                return adaptiveCardAttachment;
             }
-
-            var adaptiveCardAttachment = new Attachment()
+            catch
             {
-                ContentType = "application/vnd.microsoft.card.adaptive",
-                Content = JsonConvert.DeserializeObject(adaptiveCardJson),
-            };
-
-            return adaptiveCardAttachment;
+                return null;
+            }
         }
 
 
@@ -47,6 +68,7 @@ namespace BotOCRExtract.Services
             await turnContext.SendActivityAsync(reply, cancellationToken);
         }
 
+        //Show typing activity to User
         public static async Task SendTypingMessage(ITurnContext turnContext)
         {
             var typing = turnContext.Activity.CreateReply();

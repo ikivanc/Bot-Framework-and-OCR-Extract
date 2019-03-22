@@ -23,6 +23,73 @@ The output for above details will be like below
 
 ![](Images/key_value.png)
 
+---
+## Extract Key-Values from Mixed Structured Content
+
+Let's use one of the files from JFK Files like below we're targeting to extract 
+`CLASSIFIED MESSAGE` , `DEFERRED` , `PRIORITY`, `DTG`, `INCOMING NUMBER` and  `DATE` values. 
+
+![](Images/JFK2.png)
+
+JSON fields for regions will be like below.
+
+```json
+[
+  {
+    "id": 0,
+    "text": "CLASSIFIED MESSAGE",
+    "marginX": 5,
+    "marginY": -30,
+    "width": 200,
+    "height": 120
+  },
+  {
+    "id": 1,
+    "text": "DEFERRED",
+    "marginX": -30,
+    "marginY": -30,
+    "width": 100,
+    "height": 100
+  },
+  {
+    "id": 2,
+    "text": "PRIORITY",
+    "marginX": -30,
+    "marginY": -30,
+    "width": 100,
+    "height": 100
+  },
+  {
+    "id": 3,
+    "text": "DTG",
+    "marginX": 5,
+    "marginY": -30,
+    "width": 200,
+    "height": 200
+  },
+  {
+    "id": 4,
+    "text": "INCOMING NUMBER",
+    "marginX": 0,
+    "marginY": -30,
+    "width": 200,
+    "height": 100
+  },
+  {
+    "id": 5,
+    "text": "DATE",
+    "marginX": 50,
+    "marginY": 20,
+    "width": 300,
+    "height": 50
+  }
+]
+```
+
+And after that, we'll be succesfully extract like below. 
+
+![](Images/JFK2Extract.png)
+
 
 ## Extract Key-Values from Semi-Structured Content
 

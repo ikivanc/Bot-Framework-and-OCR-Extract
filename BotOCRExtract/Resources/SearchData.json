@@ -1,34 +1,50 @@
 [
-    {
-      "id": 0,
-      "text": "From",
-      "marginX": 5,
-      "marginY": 5,
-      "width": 800,
-      "height": 25
-    },
-    {
-      "id": 1,
-      "text": "Sent",
-      "marginX": 5,
-      "marginY": 5,
-      "width": 400,
-      "height": 25
-    },
-    {
-      "id": 2,
-      "text": "To",
-      "marginX": 5,
-      "marginY": 5,
-      "width": 300,
-      "height": 25
-    },
-    {
-      "id": 3,
-      "text": "Subject",
-      "marginX": 5,
-      "marginY": 5,
-      "width": 900,
-      "height": 25
-    }
+  {
+    "id": 0,
+    "text": "CLASSIFIED MESSAGE",
+    "marginX": 5,
+    "marginY": -30,
+    "width": 200,
+    "height": 120
+  },
+  {
+    "id": 1,
+    "text": "DEFERRED",
+    "marginX": -30,
+    "marginY": -30,
+    "width": 100,
+    "height": 100
+  },
+  {
+    "id": 2,
+    "text": "PRIORITY",
+    "marginX": -30,
+    "marginY": -30,
+    "width": 100,
+    "height": 100
+  },
+  {
+    "id": 3,
+    "text": "DTG",
+    "marginX": 5,
+    "marginY": -30,
+    "width": 200,
+    "height": 200
+  },
+  {
+    "id": 4,
+    "text": "INCOMING NUMBER",
+    "marginX": 0,
+    "marginY": -30,
+    "width": 200,
+    "height": 100
+  },
+  {
+    "id": 5,
+    "text": "DATE",
+    "marginX": 50,
+    "marginY": 20,
+    "width": 300,
+    "height": 50
+  }
 ]

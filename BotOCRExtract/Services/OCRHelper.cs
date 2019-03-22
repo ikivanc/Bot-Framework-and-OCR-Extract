@@ -32,12 +32,16 @@ namespace BotOCRExtract.Services
             //Initialize settings
             List<TextExtract> searchKeyList = OCRHelper.RetrieveAllSearchTextKeyFields(); // Retrieve all key-fields as reference
             List<Word> textvalues = new List<Word>();
+            List<Line> linevalues = new List<Line>();
             List<string> result = new List<string>();
             int x_margin, y_margin, x_width, y_height;
 
             // Extract regions of text words
             foreach (Line sline in lines)
             {
+                int[] lvalues = sline.BoundingBox;
+                linevalues.Add(new Line { Text = sline.Text, BoundingBox = lvalues });
+
                 foreach (Word sword in sline.Words)
                 {
                     int[] wvalues = sword.BoundingBox;
@@ -50,7 +54,7 @@ namespace BotOCRExtract.Services
             {
                 foreach (TextExtract key in searchKeyList)
                 {
-                    var resultkeys = textvalues.Where(a => a.Text.Contains(key.Text));
+                    var resultkeys = linevalues.Where(a => a.Text.Contains(key.Text));
                     foreach (var fieldtext in resultkeys)
                     {
                         // Assign all fields values per text

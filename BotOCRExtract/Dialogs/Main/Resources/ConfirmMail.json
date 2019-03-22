@@ -44,22 +44,7 @@
             {
               "type": "FactSet",
               "facts": [
-                {
-                  "title": "From:",
-                  "value": "#From"
-                },
-                {
-                  "title": "To:",
-                  "value": "#To"
-                },
-                {
-                  "title": "Sent Date:",
-                  "value": "#Sent"
-                },
-                {
-                  "title": "Subject:",
-                  "value": "#Subject"
-                }
+                #GENERATEITEMS
               ]
             }
           ]
