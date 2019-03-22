@@ -93,7 +93,76 @@ And after that, we'll be succesfully extract like below.
 
 ## Extract Key-Values from Semi-Structured Content
 
-Let's assume our sample is like semi-structured like below e-mail.
+Let's use one of the files from JFK Files like below we're targeting to extract 
+`FROM` , `TITLE` , `AGENCY ORIGINATOR`, `RECORD NUMBER`, `RECORD SERIES` and  `AGENCY FILE NUMBER` values. 
+
+![](Images/JFK1.png)
+
+JSON fields for regions will be like below.
+
+```json
+[
+  {
+    "id": 0,
+    "text": "FROM",
+    "marginX": 50,
+    "marginY": 5,
+    "width": 150,
+    "height": 25
+  },
+  {
+    "id": 1,
+    "text": "TITLE",
+    "marginX": 50,
+    "marginY": 5,
+    "width": 600,
+    "height": 25
+  },
+  {
+    "id": 2,
+    "text": "AGENCY ORIGINATOR",
+    "marginX": 200,
+    "marginY": 5,
+    "width": 300,
+    "height": 25
+  },
+  {
+    "id": 3,
+    "text": "RECORD NUMBER",
+    "marginX": 220,
+    "marginY": 5,
+    "width": 300,
+    "height": 25
+  },
+  {
+    "id": 4,
+    "text": "RECORD SERIES",
+    "marginX": 220,
+    "marginY": 5,
+    "width": 300,
+    "height": 25
+  },
+  {
+    "id": 5,
+    "text": "AGENCY FILE NUMBER",
+    "marginX": 300,
+    "marginY": 5,
+    "width": 400,
+    "height": 25
+  }
+]
+```
+
+And after that, we'll be succesfully extract like below.
+
+![](Images/JFK1Extract.png)
+
+
+
+---
+
+In same structure let's assume our sample is like semi-structured like below e-mail.
+
 ![](Images/uefa.png)
 
 We'll be looking for in this image, basically to detect `From`, `To`, `Sent`, `Subject` fields location first then find values next to these fields. Generally in these type for forms value width is dynamic, for this reason we're using dynamic width/heigh/margins per Key-Value pair.
