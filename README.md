@@ -8,20 +8,21 @@ This bot has been created using [Microsoft Bot Framework][1].
 
 ## Defining Reference Text (Key) and Desired Value Margins
 Search data notation is like below format:
+
 ```json
 {
-  "id": 0,
-  "text": "From",   // Your Reference Text Value
-  "marginX": 5,     // Margin to left of your value field
-  "marginY": 5,     // Margin to left top your value field
-  "width": 800,     // Width of your text area
-  "height": 25      // Height of your text area
+  "id": 2,
+  "text": "PRIORITY",   // Your Reference Text Value
+  "marginX": -30,       // Margin to left of your value field
+  "marginY": -30,       // Margin to left top your value field
+  "width": 100,         // Width of your text area
+  "height": 100         // Height of your text area
 }
 ```
 
 The output for above details will be like below
 
-![](Images/key_value.png)
+![](Images/JFK2Values.png)
 
 ---
 ## Extract Key-Values from Mixed Structured Content
@@ -85,6 +86,9 @@ JSON fields for regions will be like below.
   }
 ]
 ```
+After above definitions search regions will be set like below
+
+![](Images/JFK2Values.png)
 
 And after that, we'll be succesfully extract like below. 
 
@@ -96,38 +100,15 @@ And after that, we'll be succesfully extract like below.
 Let's use one of the files from JFK Files like below we're targeting to extract 
 `FROM` , `TITLE` , `AGENCY ORIGINATOR`, `RECORD NUMBER`, `RECORD SERIES` and  `AGENCY FILE NUMBER` values. 
 
-![](Images/JFK1.png)
 
+![](Images/JFK1.png)
+ 
 JSON fields for regions will be like below.
 
 ```json
 [
   {
     "id": 0,
-    "text": "FROM",
-    "marginX": 50,
-    "marginY": 5,
-    "width": 150,
-    "height": 25
-  },
-  {
-    "id": 1,
-    "text": "TITLE",
-    "marginX": 50,
-    "marginY": 5,
-    "width": 600,
-    "height": 25
-  },
-  {
-    "id": 2,
-    "text": "AGENCY ORIGINATOR",
-    "marginX": 200,
-    "marginY": 5,
-    "width": 300,
-    "height": 25
-  },
-  {
-    "id": 3,
     "text": "RECORD NUMBER",
     "marginX": 220,
     "marginY": 5,
@@ -135,23 +116,50 @@ JSON fields for regions will be like below.
     "height": 25
   },
   {
-    "id": 4,
+    "id": 1,
     "text": "RECORD SERIES",
     "marginX": 220,
+    "marginY": 5,
+    "width": 300,
+    "height": 20
+  },
+  {
+    "id": 2,
+    "text": "AGENCY FILE NUMBER",
+    "marginX": 300,
     "marginY": 5,
     "width": 300,
     "height": 25
   },
   {
-    "id": 5,
-    "text": "AGENCY FILE NUMBER",
-    "marginX": 300,
+    "id": 3,
+    "text": "AGENCY ORIGINATOR",
+    "marginX": 200,
     "marginY": 5,
-    "width": 400,
+    "width": 150,
+    "height": 25
+  },
+    {
+    "id": 4,
+    "text": "FROM",
+    "marginX": 50,
+    "marginY": 5,
+    "width": 150,
+    "height": 25
+  },
+ {
+    "id": 5,
+    "text": "TITLE",
+    "marginX": 50,
+    "marginY": 5,
+    "width": 600,
     "height": 25
   }
 ]
 ```
+
+After above definitions search regions will be set like below
+![](Images/JFK1Values.png)
 
 And after that, we'll be succesfully extract like below.
 
@@ -204,6 +212,10 @@ We'll be looking for in this image, basically to detect `From`, `To`, `Sent`, `S
     }
 ]
 ```
+
+After above definitions search regions will be set like below
+
+![](Images/UefaValues.png)
 
 When we use above settings our output is like below
 ![](Images/output_uefa.png)

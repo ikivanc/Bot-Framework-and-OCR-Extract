@@ -1,30 +1,6 @@
 [
-  {
+   {
     "id": 0,
-    "text": "FROM",
-    "marginX": 50,
-    "marginY": 5,
-    "width": 150,
-    "height": 25
-  },
-  {
-    "id": 1,
-    "text": "TITLE",
-    "marginX": 50,
-    "marginY": 5,
-    "width": 600,
-    "height": 25
-  },
-  {
-    "id": 2,
-    "text": "AGENCY ORIGINATOR",
-    "marginX": 200,
-    "marginY": 5,
-    "width": 300,
-    "height": 25
-  },
-  {
-    "id": 3,
     "text": "RECORD NUMBER",
     "marginX": 220,
     "marginY": 5,
@@ -32,19 +8,43 @@
     "height": 25
   },
   {
-    "id": 4,
+    "id": 1,
     "text": "RECORD SERIES",
     "marginX": 220,
+    "marginY": 5,
+    "width": 300,
+    "height": 20
+  },
+  {
+    "id": 2,
+    "text": "AGENCY FILE NUMBER",
+    "marginX": 300,
     "marginY": 5,
     "width": 300,
     "height": 25
   },
   {
-    "id": 5,
-    "text": "AGENCY FILE NUMBER",
-    "marginX": 300,
+    "id": 3,
+    "text": "AGENCY ORIGINATOR",
+    "marginX": 200,
     "marginY": 5,
-    "width": 400,
+    "width": 150,
+    "height": 25
+  },
+    {
+    "id": 4,
+    "text": "FROM",
+    "marginX": 50,
+    "marginY": 5,
+    "width": 150,
+    "height": 25
+  },
+  {
+    "id": 5,
+    "text": "TITLE",
+    "marginX": 50,
+    "marginY": 5,
+    "width": 600,
     "height": 25
   }
 ]
