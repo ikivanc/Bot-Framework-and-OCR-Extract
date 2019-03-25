@@ -165,8 +165,6 @@ And after that, we'll be succesfully extract like below.
 
 ![](Images/JFK1Extract.png)
 
-
-
 ---
 
 In same structure let's assume our sample is like semi-structured like below e-mail.
@@ -271,41 +269,7 @@ I changed my `SampleData.json` file under Resources like below.
 ]
 ```
 
-After above changes in my Key fields, I changed my display parameters in `ConfirmEmail.json` Adaptive Card in Dialog folder like below
-
-```json
-...
-
-{
-"type": "FactSet",
-"facts": [
-        {
-            "title": "Date:",
-            "value": "#Date"
-        },
-        {
-            "title": "Company:",
-            "value": "#Company"
-        },
-        {
-            "title": "Total:",
-            "value": "#Total"
-        },
-        {
-            "title": "Payment Method:",
-            "value": "#Method"
-        },
-        {
-            "title": "Card:",
-            "value": "#Card"
-        }
-    ]
-}
-
-...
-```
-
-Output will be like below
+After above changes output will be like below
 ![](Images/bkm_output.png)
 
 Hope this will be helpful.
