@@ -14,7 +14,7 @@ Search data notation is like below format:
   "id": 2,
   "text": "PRIORITY",   // Your Reference Text Value
   "marginX": -30,       // Margin to left of your value field
-  "marginY": -30,       // Margin to left top your value field
+  "marginY": 30,       // Margin to left top your value field
   "width": 100,         // Width of your text area
   "height": 100         // Height of your text area
 }
@@ -40,7 +40,7 @@ JSON fields for regions will be like below.
     "id": 0,
     "text": "CLASSIFIED MESSAGE",
     "marginX": 5,
-    "marginY": -30,
+    "marginY": 30,
     "width": 200,
     "height": 120
   },
@@ -48,7 +48,7 @@ JSON fields for regions will be like below.
     "id": 1,
     "text": "DEFERRED",
     "marginX": -30,
-    "marginY": -30,
+    "marginY": 30,
     "width": 100,
     "height": 100
   },
@@ -56,7 +56,7 @@ JSON fields for regions will be like below.
     "id": 2,
     "text": "PRIORITY",
     "marginX": -30,
-    "marginY": -30,
+    "marginY": 30,
     "width": 100,
     "height": 100
   },
@@ -64,7 +64,7 @@ JSON fields for regions will be like below.
     "id": 3,
     "text": "DTG",
     "marginX": 5,
-    "marginY": -30,
+    "marginY": 30,
     "width": 200,
     "height": 200
   },
@@ -72,7 +72,7 @@ JSON fields for regions will be like below.
     "id": 4,
     "text": "INCOMING NUMBER",
     "marginX": 0,
-    "marginY": -30,
+    "marginY": 30,
     "width": 200,
     "height": 100
   },
@@ -80,7 +80,7 @@ JSON fields for regions will be like below.
     "id": 5,
     "text": "DATE",
     "marginX": 50,
-    "marginY": 20,
+    "marginY": -20,
     "width": 300,
     "height": 50
   }
@@ -111,7 +111,7 @@ JSON fields for regions will be like below.
     "id": 0,
     "text": "RECORD NUMBER",
     "marginX": 220,
-    "marginY": 5,
+    "marginY": -5,
     "width": 300,
     "height": 25
   },
@@ -119,7 +119,7 @@ JSON fields for regions will be like below.
     "id": 1,
     "text": "RECORD SERIES",
     "marginX": 220,
-    "marginY": 5,
+    "marginY": -5,
     "width": 300,
     "height": 20
   },
@@ -127,7 +127,7 @@ JSON fields for regions will be like below.
     "id": 2,
     "text": "AGENCY FILE NUMBER",
     "marginX": 300,
-    "marginY": 5,
+    "marginY": -5,
     "width": 300,
     "height": 25
   },
@@ -135,7 +135,7 @@ JSON fields for regions will be like below.
     "id": 3,
     "text": "AGENCY ORIGINATOR",
     "marginX": 200,
-    "marginY": 5,
+    "marginY": -5,
     "width": 150,
     "height": 25
   },
@@ -143,7 +143,7 @@ JSON fields for regions will be like below.
     "id": 4,
     "text": "FROM",
     "marginX": 50,
-    "marginY": 5,
+    "marginY": -5,
     "width": 150,
     "height": 25
   },
@@ -151,7 +151,7 @@ JSON fields for regions will be like below.
     "id": 5,
     "text": "TITLE",
     "marginX": 50,
-    "marginY": 5,
+    "marginY": -5,
     "width": 600,
     "height": 25
   }
@@ -180,7 +180,7 @@ We'll be looking for in this image, basically to detect `From`, `To`, `Sent`, `S
       "id": 0,
       "text": "From",
       "marginX": 5,
-      "marginY": 5,
+      "marginY": -5,
       "width": 800,
       "height": 25
     },
@@ -188,7 +188,7 @@ We'll be looking for in this image, basically to detect `From`, `To`, `Sent`, `S
       "id": 1,
       "text": "Sent",
       "marginX": 5,
-      "marginY": 5,
+      "marginY": -5,
       "width": 400,
       "height": 25
     },
@@ -196,7 +196,7 @@ We'll be looking for in this image, basically to detect `From`, `To`, `Sent`, `S
       "id": 2,
       "text": "To",
       "marginX": 5,
-      "marginY": 5,
+      "marginY": -5,
       "width": 300,
       "height": 25
     },
@@ -204,7 +204,7 @@ We'll be looking for in this image, basically to detect `From`, `To`, `Sent`, `S
       "id": 3,
       "text": "Subject",
       "marginX": 5,
-      "marginY": 5,
+      "marginY": -5,
       "width": 900,
       "height": 25
     }
@@ -230,7 +230,7 @@ I changed my `SampleData.json` file under Resources like below.
     "id": 0,
     "text": "Date",
     "marginX": 50,
-    "marginY": 5,
+    "marginY": -5,
     "width": 400,
     "height": 25
   },
@@ -238,7 +238,7 @@ I changed my `SampleData.json` file under Resources like below.
     "id": 1,
     "text": "Company",
     "marginX": 50,
-    "marginY": 5,
+    "marginY": -5,
     "width": 400,
     "height": 25
   },
@@ -246,7 +246,7 @@ I changed my `SampleData.json` file under Resources like below.
     "id": 2,
     "text": "Total",
     "marginX": 50,
-    "marginY": 5,
+    "marginY": -5,
     "width": 400,
     "height": 25
   },
@@ -254,7 +254,7 @@ I changed my `SampleData.json` file under Resources like below.
     "id": 3,
     "text": "Card",
     "marginX": 50,
-    "marginY": 5,
+    "marginY": -5,
     "width": 400,
     "height": 25
   },
@@ -262,7 +262,7 @@ I changed my `SampleData.json` file under Resources like below.
     "id": 4,
     "text": "Method",
     "marginX": 50,
-    "marginY": 5,
+    "marginY": -5,
     "width": 400,
     "height": 25
   }

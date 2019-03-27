@@ -69,7 +69,7 @@ namespace BotOCRExtract.Services
                                                     where
                                                     (a.BoundingBox[0] >= fieldtext.BoundingBox[0] + x_margin) &&
                                                     (a.BoundingBox[0] <= fieldtext.BoundingBox[0] + x_margin + x_width) &&
-                                                    (a.BoundingBox[1] >= fieldtext.BoundingBox[1] - y_margin) &&
+                                                    (a.BoundingBox[1] >= fieldtext.BoundingBox[1] + y_margin) &&
                                                     (a.BoundingBox[1] <= fieldtext.BoundingBox[1] + y_height)
                                                     select (string)a.Text);
                         result.Add(fieldtext.Text + " - " + txtreply);
