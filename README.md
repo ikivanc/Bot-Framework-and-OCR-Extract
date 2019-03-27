@@ -9,12 +9,12 @@ This bot has been created using [Microsoft Bot Framework][1].
 ## Defining Reference Text (Key) and Desired Value Margins
 Search data notation is like below format:
 
-```json
+```
 {
   "id": 2,
   "text": "PRIORITY",   // Your Reference Text Value
   "marginX": -30,       // Margin to left of your value field
-  "marginY": 30,       // Margin to left top your value field
+  "marginY": 30,        // Margin to left top your value field
   "width": 100,         // Width of your text area
   "height": 100         // Height of your text area
 }
